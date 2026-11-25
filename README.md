@@ -1,29 +1,37 @@
-Flixster is an app that allows users to browse movies from the The Movie Database API.
+# Flixster
 
-Submitted by: Vrajesh Trivedi
+Android movie browser app built in Kotlin using The Movie Database (TMDB) `now_playing` API, `AsyncHttpClient`, and `Glide`.
 
-Time spent: 5.5 hours total.
+---
 
-User Stories
+## Demo
 
-REQUIRED (10pts)
- (10pts) User can view a list of movies (title, poster image, and overview) currently playing in theaters from the Movie Database API.
- 
-BONUS
- - [x] (2pts) Views should be responsive for both landscape/portrait mode.
-   - [x] (1pt) In portrait mode, the poster image, title, and movie overview is shown.
-   - [x] (1pt) In landscape mode, the rotated alternate layout should use the backdrop image instead and show the title and movie overview to the right of it.
+<p align="center">
+  <img src="Walkthrough.gif" width="480" alt="Flixster app walkthrough" />
+</p>
 
-- [x] (2pts) Display a nice default [placeholder graphic](https://guides.codepath.org/android/Displaying-Images-with-the-Glide-Library#advanced-usage) for each image during loading
-- [x] (2pts) Improved the user interface by experimenting with styling and coloring.
-- [ ] (2pts) For popular movies (i.e. a movie voted for more than 5 stars), the full backdrop image is displayed. Otherwise, a poster image, the movie title, and overview is listed. Use Heterogenous RecyclerViews and use different ViewHolder layout files for popular movies and less popular ones.
+---
 
-Walkthrough gif: 
-![](Walkthrough.gif)
+## Features
 
-Notes
-Describe any challenges encountered while building the app.
+- Fetches currently playing movies from the TMDB REST API (`MainActivity.kt` + `Movie.kt`).
+- Displays movie titles, overviews, and poster artwork inside a `RecyclerView` (`MovieAdapter.kt`).
+- Responsive layouts for both **portrait** (`res/layout/`, poster image) and **landscape** (`res/layout-land/`, backdrop image beside details).
+- Placeholder graphics and image caching via Glide.
 
-Open-source libraries used
-Android Async HTTP - Simple asynchronous HTTP requests with JSON parsing
-Glide - Image loading and caching library for Androids
+---
+
+## Tech Stack
+
+- **Language:** Kotlin
+- **Networking:** `com.codepath.libraries:asynchttpclient`
+- **Image Loading:** Glide (`placeholder.png` fallback)
+- **UI:** `RecyclerView`, ConstraintLayout
+
+---
+
+## Running Locally
+
+1. Clone this repository and open it in **Android Studio**.
+2. Sync Gradle and allow dependencies to download.
+3. Run the `app` configuration on an Android emulator or physical device.
